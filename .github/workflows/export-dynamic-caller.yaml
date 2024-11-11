@@ -89,7 +89,7 @@ jobs:
           fi
   export:
     needs: prepare
-    uses: jesuino/rhdh-plugin-export-backstage-community-plugins/.github/workflows/export-dynamic.yaml@main
+    uses: jesuino/rhdh-plugin-export-backstage-community-plugins/.github/workflows/export-dynamic.yaml@test_action
     strategy:
       fail-fast: false
       matrix:
