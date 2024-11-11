@@ -89,7 +89,7 @@ jobs:
           fi
   export:
     needs: prepare
-    uses: redhat-developer/rhdh-plugin-export-backstage-community-plugins/.github/workflows/export-dynamic.yaml@main
+    uses: jesuino/rhdh-plugin-export-backstage-community-plugins/.github/workflows/export-dynamic.yaml@main
     strategy:
       fail-fast: false
       matrix:
