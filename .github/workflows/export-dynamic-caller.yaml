@@ -49,7 +49,7 @@ concurrency:
 
 jobs:
   parent_export:
-    uses: redhat-developer/rhdh-plugin-export-backstage-community-plugins/.github/workflows/export-dynamic.yaml@main
+    uses: jesuino/rhdh-plugin-export-backstage-community-plugins/.github/workflows/export-dynamic.yaml@main
     with:
       node-version: ${{ inputs.node-version }}
       janus-cli-version: ${{ inputs.janus-cli-version }}
