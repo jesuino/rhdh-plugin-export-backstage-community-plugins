@@ -38,7 +38,7 @@ on:
       publish-container:
         description: Flag to either publish a container image with the dynamic plugin or not
         type: boolean
-        default: false
+        default: true
         required: false
 
   push:
