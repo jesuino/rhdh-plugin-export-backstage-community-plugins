@@ -35,6 +35,12 @@ on:
         required: false
         default: ''
 
+      publish-container:
+        description: Flag to either publish a container image with the dynamic plugin or not
+        type: boolean
+        default: false
+        required: false
+
   push:
     tags:
       - "v*.*.*"
@@ -49,13 +55,14 @@ concurrency:
 
 jobs:
   parent_export:
-    uses: redhat-developer/rhdh-plugin-export-utils/.github/workflows/export-workspaces-as-dynamic.yaml@main
+    uses: jesuino/rhdh-plugin-export-utils/.github/workflows/export-workspaces-as-dynamic.yaml@RHIDP-4712
     with:
       node-version: ${{ inputs.node-version }}
       janus-cli-version: ${{ inputs.janus-cli-version }}
       plugins-repo: ${{ inputs.plugins-repo }}
       upload-project-on-error: ${{ inputs.upload-project-on-error == 'true' }}
       overlay-branch: ${{ inputs.overlay-branch }}
+      publish-container:: ${{ inputs.publish-container }}
 
     permissions:
       contents: write
