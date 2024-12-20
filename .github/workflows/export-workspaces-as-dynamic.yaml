@@ -54,6 +54,15 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  check_params:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print input params
+        run: |
+          echo "Publish Container: "
+          echo "  ${{ publish-container }}"
+          echo "  ${{ publish-container == 'true' }}"
+
   parent_export:
     uses: redhat-developer/rhdh-plugin-export-utils/.github/workflows/export-workspaces-as-dynamic.yaml@main
     with:
