@@ -37,8 +37,8 @@ on:
 
       publish-container:
         description: Flag to either publish a container image with the dynamic plugin or not
-        type: boolean
-        default: true
+        type: string
+        default: 'true'
         required: false
 
   push:
@@ -54,6 +54,15 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  check_params:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print input params
+        run: |
+          echo "Publish Container: "
+          echo "  ${{ inputs.publish-container }}"
+          echo "  ${{ inputs.publish-container == 'true' }}"
+
   parent_export:
     uses: redhat-developer/rhdh-plugin-export-utils/.github/workflows/export-workspaces-as-dynamic.yaml@main
     with:
