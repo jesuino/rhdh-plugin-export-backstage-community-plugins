@@ -60,8 +60,8 @@ jobs:
       - name: Print input params
         run: |
           echo "Publish Container: "
-          echo "  ${{ publish-container }}"
-          echo "  ${{ publish-container == 'true' }}"
+          echo "  ${{ inputs.publish-container }}"
+          echo "  ${{ inputs.publish-container == 'true' }}"
 
   parent_export:
     uses: redhat-developer/rhdh-plugin-export-utils/.github/workflows/export-workspaces-as-dynamic.yaml@main
